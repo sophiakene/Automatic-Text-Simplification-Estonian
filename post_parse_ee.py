@@ -6,17 +6,12 @@ import random
 
 class PostParser():
 
-	"""def __init__(self, rfile, wfile):
-		self.rfile = rfile
-		self.wfile = wfile"""
-
 	def reform(self, rfile, wfile):
 		"""Aligns word and its corresponding analysis."""
 		output = ''
 		for line in rfile:
 			if line.startswith('"<'):
 				output += '\n'
-				#output += line.strip()+"\t"
 			output += line.strip()+"\t"
 		wfile.write(output)
 		return output
@@ -29,7 +24,7 @@ class PostParser():
 		for line in rfile:
 			if '"<s>"' in line:
 				pos = {}
-			if len(line.strip().split("\t")) == 2: #not line.startswith('"<s>"') and 
+			if len(line.strip().split("\t")) == 2:
 				key = (line.strip('"').split("\t"))[0]
 				value = (line.strip('"').split("\t"))[1]
 				if key.strip('"<').strip('>"') in pos:
@@ -39,13 +34,10 @@ class PostParser():
 				sentences.append(pos)
 		return sentences
 
-
+#----------------------------------------------------------------------------------------------------------------------------------------------
 def main():
 
-	#file = sys.argv[0] #TODO relative file done in pipeline.
-
 	subprocess.call(['./parser17.sh', '../parsethis.txt'], cwd='EstCG-parser')
-	#creates neu.txt.cg3 in the same directory
 
 	with open('parsethis.txt.cg3') as parsed_doc, open('parsethis.txt', 'w+', encoding='utf-8') as writefile:
 		lines = parsed_doc.readlines()
