@@ -2,14 +2,14 @@
 
 Rule-based automatic text simplification for Estonian implemented in Python
 
-#Requirements
+##Requirements
 
 Python3, Estonian parser Est-CG: https://github.com/EstSyntax/EstCG
 
 Parser files have to be in 'EstCG-parser' called folder in same directory as pipeline, post_parse and simplify scripts. 
 
 
-#Usage
+##Usage
 
 python3 pipeline_ee_.py [textfile_to_simplify] 
 
