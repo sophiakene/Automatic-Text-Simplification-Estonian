@@ -322,6 +322,7 @@ class Simplify():
             #last simplifying step: split sentences on 'aga' and 'ent'
             simplified_sent = simplified_sent.replace(', aga', '. Aga')
             simplified_sent = simplified_sent.replace(', ent', '. Ent')
+            simplified_sent = simplified_sent.replace(', kuid', '. Kuid')
 
 
             #remove unnecessary punctuation
